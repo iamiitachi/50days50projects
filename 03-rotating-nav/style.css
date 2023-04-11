@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  background-color: #333;
+  color: #222;
+}
+
+.container {
+  background-color: #fafafa;
+  transform-origin: top left;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+  transition: transform 0.5s linear;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.container.show-nav + nav li {
+  transform: translate(0);
+  transition-delay: 0.3s;
+}
+
+nav {
+  position: fixed;
+  left: 0;
+  bottom: 40px;
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 30px;
+}
+
+nav ul li {
+  margin: 40px 0;
+  color: #fafafa;
+  text-transform: uppercase;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+
+nav ul li i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+.circle {
+  background-color: #ff7979;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  color: #fff;
+  transition: transform 0.3s linear;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.content img {
+  /* max-width: 100%; */
+  display: block;
+  margin: 0 auto;
+}
+
+.content h1 {
+  margin: 0;
+}
+
+.content small {
+  font-style: italic;
+  color: #555;
+}
+
+.content p {
+  color: #333;
+  line-height: 1.5;
+}
